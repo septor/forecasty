@@ -8,7 +8,7 @@
 		<word>forecast</word>
 	</keywords>
 	<category>misc</category>
-	<copyright>Patrick Weaver</copyright>
+	<copyright>Patrick Weaver, 2014</copyright>
 	<adminLinks>
 		<link url="admin_config.php" description="" icon="images/icon_32.png" iconSmall="images/icon_16.png" primary="true" >LAN_CONFIGURE</link>
 	</adminLinks>
@@ -16,8 +16,9 @@
 		<pref name='forecastioToken'></pref>
 		<pref name='fallbackLocation'>0,0</pref>
 		<pref name='tempType'>F</pref>
-		<pref name='tempThreashold'>50</pref>
+		<pref name='tempThreshold'>50</pref>
 		<pref name='hotColor'>#ff0000</pref>
 		<pref name='coldColor'>#0000ff</pref>
+		<pref name='vulgarity'>low</pref>
 	</pluginPrefs>
 </e107Plugin>
