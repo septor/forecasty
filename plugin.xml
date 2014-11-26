@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<e107Plugin name="forecasty" lan="" version="1.0" date="2014-11-24" compatibility="2.0" installRequired="true" >
+<e107Plugin name="forecasty" lan="" version="1.0" date="" compatibility="2.0" installRequired="true" >
 	<author name="Patrick Weaver" url="http://septor.us/" />
 	<summary lan="">Forecast.io weather information</summary>
 	<description lan="">One line, to the point, weather forecast information for the current visitor's location.</description>
@@ -13,6 +13,11 @@
 		<link url="admin_config.php" description="" icon="images/icon_32.png" iconSmall="images/icon_16.png" primary="true" >LAN_CONFIGURE</link>
 	</adminLinks>
 	<pluginPrefs>
-		<pref name='fallbackLocation'>0</pref>
+		<pref name='forecastioToken'></pref>
+		<pref name='fallbackLocation'>0,0</pref>
+		<pref name='tempType'>F</pref>
+		<pref name='tempThreashold'>50</pref>
+		<pref name='hotColor'>#ff0000</pref>
+		<pref name='coldColor'>#0000ff</pref>
 	</pluginPrefs>
 </e107Plugin>
