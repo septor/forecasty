@@ -66,29 +66,39 @@ class forecasty_ui extends e_admin_ui
 			'title' => 'TempType',
 			'type' => 'dropdown',
 			'data' => 'str',
-			'help' => 'The unit used to measure the tempature, Fahrenheit (F) or Celsius (C).',
+			'help' => 'The unit used to measure the temperature, Fahrenheit (F) or Celsius (C).',
 			'writeParms' => array('optArray' => array(
 				'F' => 'Fahrenheit',
 				'C' => 'Celsius',
+			)),
+		),
+		'accuracy' => array(
+			'title' => 'Temperature Accuracy',
+			'type' => 'dropdown',
+			'data' => 'str',
+			'help' => 'Do you want an exact temperature display or rounded?',
+			'writeParms' => array('optArray' => array(
+				'exact' => 'Exact Temperature',
+				'round' => 'Rounded Temperature',
 			)),
 		),
 		'tempThreshold'	=> array(
 			'title' => 'Tempature Threshold',
 			'type' => 'number',
 			'data' => 'str',
-			'help' => 'The tempature in which the plugin converts from hot to cold (or cold to hot).'
+			'help' => 'The temperature in which the plugin converts from hot to cold (or cold to hot).'
 		),
 		'hotColor' => array(
 			'title' => 'Hot Hex Color',
 			'type' => 'text',
 			'data' => 'str',
-			'help' => 'The color you want various elements displayed when the tempature is above the threshold.'
+			'help' => 'The color you want various elements displayed when the temperature is above the threshold.'
 		),
 		'coldColor'	=> array(
 			'title' => 'Cold Hex Color',
 			'type' => 'text',
 			'data' => 'str',
-			'help' => 'The color you want various elements displayed when the tempature is below the threshold.'
+			'help' => 'The color you want various elements displayed when the temperature is below the threshold.'
 		),
 		'vulgarity'	=> array(
 			'title' => 'Vulgarity',

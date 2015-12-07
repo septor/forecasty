@@ -16,6 +16,7 @@
 		<pref name='apiKey'></pref>
 		<pref name='fallbackLocation'>0,0</pref>
 		<pref name='tempType'>F</pref>
+		<pref name='accuracy'>round</pref>
 		<pref name='tempThreshold'>50</pref>
 		<pref name='hotColor'>#ff0000</pref>
 		<pref name='coldColor'>#0000ff</pref>
