@@ -1,6 +1,6 @@
 <?php
 
-function getLocation ( $address )
+function getLocation($address)
 {
     $prepAddr = str_replace(' ','+',$address);
     $geocode = file_get_contents('http://maps.google.com/maps/api/geocode/json?address='.$prepAddr.'&sensor=false');
