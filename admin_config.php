@@ -63,7 +63,7 @@ class forecasty_ui extends e_admin_ui
 			'help' => 'The location you want displayed if your visitors do not show up.'
 		),
 		'tempType' => array(
-			'title' => 'TempType',
+			'title' => 'Temperature Type',
 			'type' => 'dropdown',
 			'data' => 'str',
 			'help' => 'The unit used to measure the temperature, Fahrenheit (F) or Celsius (C).',
@@ -83,7 +83,7 @@ class forecasty_ui extends e_admin_ui
 			)),
 		),
 		'tempThreshold'	=> array(
-			'title' => 'Tempature Threshold',
+			'title' => 'Temperature Threshold',
 			'type' => 'number',
 			'data' => 'str',
 			'help' => 'The temperature in which the plugin converts from hot to cold (or cold to hot).'
