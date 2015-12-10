@@ -19,20 +19,52 @@ $location = $pref['fallbackLocation'];
 $wf = new Forecasty($pref['apiKey'], $location);
 
 $current = $wf->getData('current');
-$hour = $wf->getData('hour');
-$day = $wf->getData('day');
-$week = $wf->getData('week');
+$hour = $wf->getData('nexthour');
+$day = $wf->getData('nextday');
+$week = $wf->getData('nextweek');
 
 $sc->setVars(array(
-	'temperature' => $current['temperature'],
-	'feelsLike' => $current['feelsLike'],
-	'condition' => $current['condition'],
-	'humidity' => $current['humidity'],
-	'windSpeed' => $current['windSpeed'],
-	'visibility' => $current['visibility'],
-	'pressure' => $current['pressure'],
-	'dewPoint' => $current['dewPoint'],
+	'current' => array(
+		'temperature' => $current['temperature'],
+		'feelsLike' => $current['feelsLike'],
+		'condition' => $current['condition'],
+		'humidity' => $current['humidity'],
+		'windSpeed' => $current['windSpeed'],
+		'visibility' => $current['visibility'],
+		'pressure' => $current['pressure'],
+		'dewPoint' => $current['dewPoint'],
+	),
+	'nexthour' => array(
+		'temperature' => $hour['temperature'],
+		'feelsLike' => $hour['feelsLike'],
+		'condition' => $hour['condition'],
+		'humidity' => $hour['humidity'],
+		'windSpeed' => $hour['windSpeed'],
+		'visibility' => $hour['visibility'],
+		'pressure' => $hour['pressure'],
+		'dewPoint' => $hour['dewPoint'],
+	),
+	'nextday' => array(
+		'temperature' => $day['temperature'],
+		'feelsLike' => $day['feelsLike'],
+		'condition' => $day['condition'],
+		'humidity' => $day['humidity'],
+		'windSpeed' => $day['windSpeed'],
+		'visibility' => $day['visibility'],
+		'pressure' => $day['pressure'],
+		'dewPoint' => $day['dewPoint'],
+	),
+	'nextweek' => array(
+		'temperature' => $week['temperature'],
+		'feelsLike' => $week['feelsLike'],
+		'condition' => $week['condition'],
+		'humidity' => $week['humidity'],
+		'windSpeed' => $week['windSpeed'],
+		'visibility' => $week['visibility'],
+		'pressure' => $week['pressure'],
+		'dewPoint' => $week['dewPoint'],
+	),
 ));
 
 $text = $tp->parseTemplate($template['menu'], false, $sc);
-e107::getRender()->tablerender('Weathedsadar', $text);
+e107::getRender()->tablerender('Weather', $text);

@@ -7,8 +7,15 @@
  *
  */
 $FORECASTY_TEMPLATE['menu'] = '
-{FORECASTY_TEMPERATURE}
+Right Now:<br />
+{CONDITION}
 <br />
-{FORECASTY_CONDITION} - Feels like {FORECASTY_FEELSLIKE}
+{TEMPERATURE} - Feels like {FEELSLIKE}
+<br />
+<br/>
+Tomorrow:<br/>
+{CONDITION: type=nextday}
+<br />
+{TEMPERATURE: type=nextday}
 ';
 ?>

@@ -8,45 +8,88 @@
  */
 class forecasty_shortcodes extends e_shortcode
 {
-	function sc_forecasty_temperature($parm='')
+	public $types = array('current', 'nexthour', 'nextday', 'nextweek');
+
+	function sc_temperature($parm)
 	{
-		$output = ($pref['accuracy'] == 'round' ? round($this->var['temperature']) : $this->var['temperature']);
+		$type = (empty($parm['type']) ? 'current' : $parm['type']);
+		if(!in_array($type, $this->types))
+			$type = 'current';
+
+		$output = ($pref['accuracy'] == 'round' ? round($this->var[$type]['temperature']) : $this->var[$type]['temperature']);
+
 		return $output;
 	}
 
-	function sc_forecasty_feelslike($parm='')
+	function sc_feelslike($parm)
 	{
-		$output = ($pref['accuracy'] == 'round' ? round($this->var['feelsLike']) : $this->var['feelsLike']);
+		$type = (empty($parm['type']) ? 'current' : $parm['type']);
+
+		if(!in_array($type, $this->types))
+			$type = 'current';
+
+		$output = ($pref['accuracy'] == 'round' ? round($this->var[$type]['feelsLike']) : $this->var[$type]['feelsLike']);
+
 		return $output;
 	}
 
-	function sc_forecasty_condition($parm='')
+	function sc_condition($parm)
 	{
-		return $this->var['condition'];
+		$type = (empty($parm['type']) ? 'current' : $parm['type']);
+
+		if(!in_array($type, $this->types))
+			$type = 'current';
+
+		return $this->var[$type]['condition'];
 	}
 
-	function sc_forecasty_humidity($parm='')
+	function sc_humidity($parm)
 	{
-		return $this->var['humidity'];
+		$type = (empty($parm['type']) ? 'current' : $parm['type']);
+
+		if(!in_array($type, $this->types))
+			$type = 'current';
+
+		return $this->var[$type]['humidity'];
 	}
 
-	function sc_forecasty_windspeed($parm='')
+	function sc_windspeed($parm)
 	{
-		return $this->var['windSpeed'];
+		$type = (empty($parm['type']) ? 'current' : $parm['type']);
+
+		if(!in_array($type, $this->types))
+			$type = 'current';
+
+		return $this->var[$type]['windSpeed'];
 	}
 
-	function sc_forecasty_visibility($parm='')
+	function sc_visibility($parm)
 	{
-		return $this->var['visibility'];
+		$type = (empty($parm['type']) ? 'current' : $parm['type']);
+
+		if(!in_array($type, $this->types))
+			$type = 'current';
+
+		return $this->var[$type]['visibility'];
 	}
 
-	function sc_forecasty_pressure($parm='')
+	function sc_pressure($parm)
 	{
-		return $this->var['pressure'];
+		$type = (empty($parm['type']) ? 'current' : $parm['type']);
+
+		if(!in_array($type, $this->types))
+			$type = 'current';
+
+		return $this->var[$type]['pressure'];
 	}
 
-	function sc_forecasty_dewpoint($parm='')
+	function sc_dewpoint($parm)
 	{
-		return $this->var['dewPoint'];
+		$type = (empty($parm['type']) ? 'current' : $parm['type']);
+
+		if(!in_array($type, $this->types))
+			$type = 'current';
+
+		return $this->var[$type]['dewPoint'];
 	}
 }
