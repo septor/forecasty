@@ -15,14 +15,18 @@ $template = e107::getTemplate('forecasty');
 
 // TODO: Gather the visitors location if they are a memeber, if not, utilize the fallbackLocation.
 $location = $pref['fallbackLocation'];
+
 $wf = new Forecasty($pref['apiKey'], $location);
 
 $current = $wf->getData('current');
+$hour = $wf->getData('hour');
+$day = $wf->getData('day');
+$week = $wf->getData('week');
 
 $sc->setVars(array(
 	'temperature' => $current['temperature'],
-	'feelsLike' => $current['apparentTemperature'],
-	'condition' => $current['summary'],
+	'feelsLike' => $current['feelsLike'],
+	'condition' => $current['condition'],
 	'humidity' => $current['humidity'],
 	'windSpeed' => $current['windSpeed'],
 	'visibility' => $current['visibility'],
