@@ -25,6 +25,8 @@ class forecasty_adminArea extends e_admin_dispatcher
 	);
 
 	protected $adminMenu = array(
+		'main/list'			=> array('caption' => 'Manage One Liners', 'perm' => 'P'),
+		'main/create'		=> array('caption' => 'Create One Liner', 'perm' => 'P'),
 		'main/prefs' 		=> array('caption' => LAN_PREFS, 'perm' => 'P'),
 		'main/custom'		=> array('caption' => 'Get Location', 'perm' => 'P'),
 	);
@@ -40,12 +42,74 @@ class forecasty_ui extends e_admin_ui
 {
 	protected $pluginTitle		= 'Forecasty';
 	protected $pluginName		= 'forecasty';
-	protected $table			= '';
-	protected $pid				= '';
+	protected $table			= 'forecasty_oneliners';
+	protected $pid				= 'id';
 	protected $perPage			= 10;
 	protected $batchDelete		= true;
-	protected $listOrder		= ' DESC';
-	protected $fields	 		= NULL;
+	protected $listOrder		= 'id DESC';
+
+	protected $fields = array(
+		'checkboxes' =>  array(
+			'title' => '',
+			'type' => null,
+			'data' => null,
+			'width' => '5%',
+			'thclass' => 'center',
+			'forced' => '1',
+			'class' => 'center',
+			'toggle' => 'e-multiselect',
+		),
+		'id' => array(
+			'title' => LAN_ID,
+			'data' => 'int',
+			'width' => '5%',
+			'help' => '',
+			'readParms' => '',
+			'writeParms' => '',
+			'class' => 'left',
+			'thclass' => 'left',
+		),
+		'line' => array(
+			'title' => 'One Liner',
+			'type' => 'text',
+			'data' => 'str',
+			'width' => 'auto',
+			'inline' => true,
+			'help' => 'A line used to describe the current weather condition.',
+			'readParms' => '',
+			'writeParms' => '',
+			'class' => 'left',
+			'thclass' => 'left',
+		),
+		'condition' => array(
+			'title' => 'Weather Condition',
+			'type' => 'dropdown',
+			'data' => 'str',
+			'width' => 'auto',
+			'inline' => true,
+			'help' => '',
+			'readParms' => '',
+			'writeParms' => '',
+			'class' => 'left',
+			'thclass' => 'left',
+		),
+		'vulgarity' => array(
+			'title' => 'Vulgarity Level',
+			'type' => 'dropdown',
+			'data' => 'str',
+			'width' => 'auto',
+			'inline' => true,
+			'help' => '',
+			'readParms' => '',
+			'writeParms' => array('optArray' => array(
+				'low' => 'Low',
+				'medium' => 'Medium',
+				'high' => 'High',
+			),
+			'class' => 'left',
+			'thclass' => 'left',
+		),
+	));
 
 	protected $fieldpref = array();
 
