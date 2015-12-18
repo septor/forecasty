@@ -27,6 +27,7 @@ $sc->setVars(array(
 	'current' => array(
 		'temperature' => $current['temperature'],
 		'feelsLike' => $current['feelsLike'],
+		'icon' => $current['icon'],
 		'condition' => $current['condition'],
 		'humidity' => $current['humidity'],
 		'windSpeed' => $current['windSpeed'],
@@ -37,6 +38,7 @@ $sc->setVars(array(
 	'nexthour' => array(
 		'temperature' => $hour['temperature'],
 		'feelsLike' => $hour['feelsLike'],
+		'icon' => $hour['icon'],
 		'condition' => $hour['condition'],
 		'humidity' => $hour['humidity'],
 		'windSpeed' => $hour['windSpeed'],
@@ -47,6 +49,7 @@ $sc->setVars(array(
 	'nextday' => array(
 		'temperature' => $day['temperature'],
 		'feelsLike' => $day['feelsLike'],
+		'icon' => $day['icon'],
 		'condition' => $day['condition'],
 		'humidity' => $day['humidity'],
 		'windSpeed' => $day['windSpeed'],
@@ -57,6 +60,7 @@ $sc->setVars(array(
 	'nextweek' => array(
 		'temperature' => $week['temperature'],
 		'feelsLike' => $week['feelsLike'],
+		'icon' => $week['icon'],
 		'condition' => $week['condition'],
 		'humidity' => $week['humidity'],
 		'windSpeed' => $week['windSpeed'],

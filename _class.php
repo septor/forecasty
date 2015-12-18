@@ -42,6 +42,7 @@ class Forecasty
 		$output = array(
 			'temperature' => $temperature,
 			'feelsLike' => $feelsLike,
+			'icon' => $data->icon,
 			'condition' => $data->summary,
 			'humidity' => $data->humidity,
 			'windSpeed' => $data->windSpeed,

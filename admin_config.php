@@ -100,7 +100,7 @@ class forecasty_ui extends e_admin_ui
 				'cloudy' => 'Cloudy',
 				'partly-cloudy-day' => 'Partly Cloudy (day)',
 				'partly-cloudy-night' => 'Partly Cloudy (night)',
-			),
+			)),
 			'class' => 'left',
 			'thclass' => 'left',
 		),
@@ -116,11 +116,11 @@ class forecasty_ui extends e_admin_ui
 				'low' => 'Low',
 				'medium' => 'Medium',
 				'high' => 'High',
-			),
+			)),
 			'class' => 'left',
 			'thclass' => 'left',
 		),
-	)));
+	);
 
 	protected $fieldpref = array();
 

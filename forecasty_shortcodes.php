@@ -33,6 +33,17 @@ class forecasty_shortcodes extends e_shortcode
 		return $output;
 	}
 
+	function sc_icon($parm)
+	{
+		$type = (empty($parm['type']) ? 'current' : $parm['type']);
+
+		if(!in_array($type, $this->types))
+			$type = 'current';
+
+		return $this->var[$type]['icon'];
+	}
+
+
 	function sc_condition($parm)
 	{
 		$type = (empty($parm['type']) ? 'current' : $parm['type']);
@@ -41,6 +52,17 @@ class forecasty_shortcodes extends e_shortcode
 			$type = 'current';
 
 		return $this->var[$type]['condition'];
+	}
+
+	function sc_oneliner($parm='')
+	{
+		$sql = e107::getDb();
+
+		$icon = $this->var['current']['icon'];
+
+		$oneliners = $sql->retrieve('forecasty_oneliners', '*', "`condition`='".$icon."' AND `vulgarity`='".e107::pref('forecasty', 'vulgarity')."'", true);
+
+		return $oneliners[array_rand($oneliners)]['line'];
 	}
 
 	function sc_humidity($parm)

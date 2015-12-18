@@ -17,5 +17,7 @@ Tomorrow:<br/>
 {CONDITION: type=nextday}
 <br />
 {TEMPERATURE: type=nextday}
+<br />
+{ONELINER}
 ';
 ?>
