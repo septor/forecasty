@@ -120,7 +120,7 @@ class forecasty_ui extends e_admin_ui
 			'class' => 'left',
 			'thclass' => 'left',
 		),
-	));
+	)));
 
 	protected $fieldpref = array();
 
@@ -167,13 +167,15 @@ class forecasty_ui extends e_admin_ui
 			'title' => 'Hot Hex Color',
 			'type' => 'text',
 			'data' => 'str',
-			'help' => 'The color you want various elements displayed when the temperature is above the threshold.'
+			'help' => 'The color you want various elements displayed when the temperature is above the threshold.',
+			'writeParms' => array('class' => 'colorpicker'),
 		),
 		'coldColor'	=> array(
 			'title' => 'Cold Hex Color',
 			'type' => 'text',
 			'data' => 'str',
-			'help' => 'The color you want various elements displayed when the temperature is below the threshold.'
+			'help' => 'The color you want various elements displayed when the temperature is below the threshold.',
+			'writeParms' => array('class' => 'colorpicker'),
 		),
 		'vulgarity'	=> array(
 			'title' => 'Vulgarity',
