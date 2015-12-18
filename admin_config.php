@@ -97,7 +97,7 @@ class forecasty_ui extends e_admin_ui
 				'sleet' => 'Sleeting',
 				'wind' => 'Windy',
 				'fog' => 'Foggy',
-				'cloudy' => 'cloudy',
+				'cloudy' => 'Cloudy',
 				'partly-cloudy-day' => 'Partly Cloudy (day)',
 				'partly-cloudy-night' => 'Partly Cloudy (night)',
 			),
