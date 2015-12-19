@@ -188,10 +188,25 @@ class forecasty_ui extends e_admin_ui
 				'high' => 'High',
 			)),
 		),
+		'iconSet' => array(
+			'title' => 'Weather Icon Set',
+			'type' => 'dropdown',
+			'data' => 'str',
+			'help' => 'Select an icon set you want displayed',
+		),
 	);
 
 	public function init()
 	{
+		$this->iconSet[e107::pref('forecasty', 'iconSet')] = e107::pref('forecasty', 'iconSet');
+
+		foreach(glob(e_PLUGIN.'forecasty/icons/*', GLOB_ONLYDIR) as $dir)
+		{
+			$dir = str_replace(e_PLUGIN.'forecasty/icons/', '', $dir);
+			if($dir != e107::pref('forecasty', 'iconSet'))
+				$this->iconSet[$dir] = $dir;
+		}
+		$this->prefs['iconSet']['writeParms'] = $this->iconSet;
 	}
 
 	public function beforeCreate($new_data)

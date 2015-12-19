@@ -21,5 +21,6 @@
 		<pref name='hotColor'>#ff0000</pref>
 		<pref name='coldColor'>#0000ff</pref>
 		<pref name='vulgarity'>low</pref>
+		<pref name='iconSet'>Climacons</pref>
 	</pluginPrefs>
 </e107Plugin>

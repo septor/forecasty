@@ -18,6 +18,48 @@ The default icon set, [Climacons](http://adamwhitcroft.com/climacons/), is in SV
 
 An alternative is to get a different icon set that isn't in SVG format if you don't want your users to have to worry about that.
 
+## Icon Sets
+
+If you don't like the default icon set you can add your own! The requirements for doing so are simple:
+
+1. Upload your icons into the `/icons` directory in their own directory.
+2. Make sure you have an icon to represent all the supported conditions (found below).
+3. Include an `icon_set.php` file with the required variables (found below) inside the set's directory.
+
+That's it. Now you just need to select it as your icon set in the preferences and you're good to go!
+
+### Required Conditions
+
+They should be named exactly as described below with your format prepending it; eg: `cloudy.png`
+
+* clear-day
+* clear-night
+* rain
+* snow
+* sleet
+* wind
+* fog
+* cloudy
+* partly-cloudy-day
+* partly-cloudy-night
+
+This list could expand if the supported icons from the API gets increased.
+
+### icon_set.php
+
+Should be the in the following format:
+
+```php
+<?php
+$name	= 'Climacons';
+$author	= 'Adam Whitcroft';
+$url	= 'http://adamwhitcroft.com/climacons/';
+$format	= 'svg';
+?>
+```
+
+The `$format` variable is *required* for the set to work, so make sure you include it.
+
 ## Default One Liners
 
 Are auto installed when you install the plugin. If you want your one liner added to this list, you need to add to the [first issue](https://github.com/septor/forecasty/issues/1) with the requested information.

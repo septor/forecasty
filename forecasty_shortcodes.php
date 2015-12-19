@@ -35,12 +35,20 @@ class forecasty_shortcodes extends e_shortcode
 
 	function sc_icon($parm)
 	{
+		$pref = e107::pref('forecasty');
+
 		$type = (empty($parm['type']) ? 'current' : $parm['type']);
+		$height = (empty($parm['height']) ? '82px' : $parm['height']);
+		$width = (empty($parm['width']) ? '82px' : $parm['width']);
+
+		$iconSet = (isset($pref['iconSet']) ? $pref['iconSet'] : 'Climacons');
+		$isp = e_PLUGIN.'forecasty/icons/'.$iconSet.'/';
+		require_once($isp.'icon_set.php');
 
 		if(!in_array($type, $this->types))
 			$type = 'current';
 
-		return $this->var[$type]['icon'];
+		return '<img src="'.$isp.$this->var[$type]['icon'].'.'.$format.'" style="height:'.$height.'; width:'.$width.';" />';
 	}
 
 
