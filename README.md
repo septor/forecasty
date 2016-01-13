@@ -1,5 +1,7 @@
 # Forecasty
 
+[![Join the chat at https://gitter.im/septor/forecasty](https://badges.gitter.im/septor/forecasty.svg)](https://gitter.im/septor/forecasty?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 Ever needed a weather plugin with a little bit of attitude? Of course giving people the weather is great, but why not make it fun for them? Guess what, now you can!
 
 ## Forecast.io API
